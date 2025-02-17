@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trabalho</title>
+    <link rel="stylesheet" href="./main/index.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        h1 {
+            font-size: 4rem;
+            position: absolute;
+            top: 20%;
+            text-align: center;
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 10px;
+            opacity: 0.8;
+        }
+        .button {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: gray;
+        }
+        .description {
+            display: none;
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            border-radius: 5px;
+            max-width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seja Bem-vindo ao Meu Trabalho</h1>
+    <button class="button" onclick="toggleDescription()">Sobre o Projeto</button>
+    <div class="description" id="description">
+        <p> Seja bem vindo ao meu trabalho, coloquei um video como o pedido do professor, mas tambem personalizei a source do site com algumas coisas, já aviso que a unica coisa que utilizei o chat gpt foi para criar esse sistema de neve caindo, o resto eu fiz na mão.
+            
+            Creditos: João Gabriel Chenfer 1°C em TI
+        </p>
+    </div>
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.innerHTML = "&#10052;"; // Símbolo de floco de neve
+            snowflake.classList.add('snowflake');
+            document.body.appendChild(snowflake);
+
+            const startLeft = Math.random() * window.innerWidth;
+            const duration = Math.random() * 5 + 3;
+            const size = Math.random() * 20 + 5;
+
+            snowflake.style.left = `${startLeft}px`;
+            snowflake.style.fontSize = `${size}px`;
+            snowflake.style.animation = `fall ${duration}s linear`;
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, duration * 1000);
+        }
+
+        function toggleDescription() {
+            const desc = document.getElementById('description');
+            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+        }
+
+        setInterval(createSnowflake, 200);
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                to {
+                    transform: translateY(${window.innerHeight}px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
+</head>
+<body>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FD1hqvhIVXY?si=Kvy2fIpwZI9VKdDx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    
+    
+    
+</body>
+</html>
